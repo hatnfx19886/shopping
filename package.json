@@ -1,0 +1,25 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "Node First App",
+  "main": "app.js",
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hatnfx19886",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^6.1.1",
+    "mongodb": "^5.2.0",
+    "mongoose": "^7.0.3"
+  }
+}
