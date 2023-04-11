@@ -75,6 +75,7 @@ exports.addOrder = (req, res, next) => {
           <br />
           <h1>Thank you</h1></div>`,
             })
+            .then(() => console.log('Email Sent'))
             .catch((err) => console.log(err));
         })
         .catch((err) => res.status(400).json({ message: err.message }));
