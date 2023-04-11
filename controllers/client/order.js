@@ -75,7 +75,7 @@ exports.addOrder = (req, res, next) => {
           <h1>Thank you</h1></div>`,
             })
             .then(() => res.json({ message: 'Success' }))
-            .catch((err) => console.log(err));
+            .catch((err) => res.status(400).json({ message: err.message }));
         })
         .catch((err) => res.status(400).json({ message: err.message }));
     })
