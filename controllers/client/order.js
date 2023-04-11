@@ -35,7 +35,6 @@ exports.addOrder = (req, res, next) => {
               console.log(err);
             }
           });
-          res.json({ message: 'Success' });
           sgMail
             .send({
               to: email,
@@ -75,7 +74,7 @@ exports.addOrder = (req, res, next) => {
           <br />
           <h1>Thank you</h1></div>`,
             })
-            .then(() => console.log('Email Sent'))
+            .then(() => res.json({ message: 'Success' }))
             .catch((err) => console.log(err));
         })
         .catch((err) => res.status(400).json({ message: err.message }));
@@ -85,6 +84,7 @@ exports.addOrder = (req, res, next) => {
 
 exports.findByUser = (req, res, next) => {
   Order.find({ user: req.query.userId })
+    .sort({ updatedAt: -1 })
     .populate('user')
     .then((data) => res.json(data))
     .catch(() => res.status(500).json({ message: "Can't connect to server" }));
