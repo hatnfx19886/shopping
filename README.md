@@ -1,1 +1,1 @@
-# shopping
+Server Backend for Shopping App
